@@ -1,0 +1,29 @@
+<template>
+    <div class="tab-bar-item">
+        <slot name="item-icon"></slot>
+        <slot name="item-text"></slot>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "TabBarItem"
+    }
+</script>
+
+<style scoped>
+    .tab-bar-item {
+        flex: 1;
+        text-align: center;
+        height: 49px;
+        margin-top: 3px;
+        font-size: 14px;
+        margin-bottom: 1px;
+    }
+
+    .tab-bar-item img {
+        width: 29px;
+        height: 29px;
+        vertical-align: middle;
+    }
+</style>
