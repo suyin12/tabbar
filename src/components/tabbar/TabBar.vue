@@ -21,5 +21,7 @@
         right: 0;
         left: 0;
         bottom: 0;
+
+        box-shadow: 0 -1px 0 #888888;
     }
 </style>

@@ -1,13 +1,27 @@
 <template>
-    <div class="tab-bar-item">
-        <slot name="item-icon"></slot>
+    <div class="tab-bar-item" @click="itemClick">
+        <div v-if="!isActive"><slot name="item-icon"></slot></div>
+        <div v-else><slot name="item-icon-active"></slot></div>
         <slot name="item-text"></slot>
     </div>
 </template>
 
 <script>
     export default {
-        name: "TabBarItem"
+        name: "TabBarItem",
+        props:{
+            path: String
+        },
+        methods: {
+            itemClick() {
+                this.$router.replace(this.path)
+            }
+        },
+        computed: {
+            isActive() {
+                return this.$route.path.indexOf(this.path) !== -1
+            }
+        }
     }
 </script>
 
